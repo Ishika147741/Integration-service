@@ -73,26 +73,26 @@ class DiscordService {
   }
 
   /**
-   * Send message to Discord user
-   * @param {string} userId - Discord user ID
+   * Send message to Discord user or channel
+   * @param {string} targetId - Discord user ID or channel ID
    * @param {string} message - Message to send
    * @returns {Object} Result object
    */
-  async sendMessage(userId, message) {
+  async sendMessage(targetId, message) {
     try {
       if (this.isDemoMode) {
-        console.log(`📨 [DEMO] Would send Discord message to ${userId}: ${message.substring(0, 50)}...`);
+        console.log(`📨 [DEMO] Would send Discord message to ${targetId}: ${message.substring(0, 50)}...`);
         
-        // Register user first for demo mode
-        await this.registerUser(userId, 'Demo User');
+        // Register user first for demo mode (only if it looks like a user ID)
+        await this.registerUser(targetId, 'Demo User');
         
         // Log to database in demo mode
-        await this.logMessage(userId, message, 'sent', null, null, new Date());
+        await this.logMessage(targetId, message, 'sent', null, null, new Date());
         
         return {
           success: true,
           messageId: `demo_${Date.now()}`,
-          userId: userId,
+          userId: targetId,
           message: message,
           timestamp: new Date().toISOString(),
           demo: true
@@ -103,38 +103,59 @@ class DiscordService {
         throw new Error('Discord bot not initialized');
       }
 
-      console.log(`📨 Incoming Discord message request for user ID: ${userId}`);
+      console.log(`📨 Incoming Discord message request for ID: ${targetId}`);
 
-      // Get or create user
-      await this.registerUser(userId);
+      // Try to fetch as channel first, then as user
+      let target;
+      let isChannel = false;
+      
+      try {
+        // Try to get as channel
+        target = await this.client.channels.fetch(targetId);
+        if (target) {
+          isChannel = true;
+          console.log(`📍 Target is a channel: ${target.name || 'Unknown'} in guild: ${target.guild?.name || 'Unknown'}`);
+        }
+      } catch (channelError) {
+        console.log(`❌ Not a channel, trying as user...`);
+        try {
+          // If channel fetch fails, try as user
+          target = await this.client.users.fetch(targetId);
+          console.log(`👤 Target is a user: ${target.username || 'Unknown'}`);
+          
+          // Register user in database (only for actual users)
+          await this.registerUser(targetId, target.username, target);
+        } catch (userError) {
+          throw new Error(`Target with ID ${targetId} not found as channel or user`);
+        }
+      }
 
-      // Fetch the user
-      const user = await this.client.users.fetch(userId);
-      if (!user) {
-        throw new Error(`User with ID ${userId} not found`);
+      if (!target) {
+        throw new Error(`Target with ID ${targetId} not found`);
       }
 
       // Send the message
-      const sentMessage = await user.send(message);
+      const sentMessage = await target.send(message);
 
-      // Log successful message
-      await this.logMessage(userId, message, 'sent', sentMessage.id, null, new Date());
+      // Log successful message (use targetId for both users and channels)
+      await this.logMessage(targetId, message, 'sent', sentMessage.id, null, new Date());
 
-      console.log(`✅ Discord message sent to ${userId}: ${message.substring(0, 50)}...`);
+      console.log(`✅ Discord message sent to ${isChannel ? 'channel' : 'user'} ${targetId}: ${message.substring(0, 50)}...`);
 
       return {
         success: true,
         messageId: sentMessage.id,
-        userId: userId,
+        userId: targetId,
         message: message,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        targetType: isChannel ? 'channel' : 'user'
       };
 
     } catch (error) {
-      console.error(`❌ Failed to send Discord message to ${userId}:`, error.message);
+      console.error(`❌ Failed to send Discord message to ${targetId}:`, error.message);
       
       // Log failed message
-      await this.logMessage(userId, message, 'failed', null, error.message, null);
+      await this.logMessage(targetId, message, 'failed', null, error.message, null);
       
       throw error;
     }
@@ -148,6 +169,12 @@ class DiscordService {
    */
   async registerUser(userId, username = null, userObj = null) {
     try {
+      // Skip registration if this looks like a channel ID or if no username provided
+      if (!username && !userObj) {
+        console.log(`⚠️  Skipping user registration for ${userId} - no user data available`);
+        return;
+      }
+
       const queryText = `
         INSERT INTO discord_users (user_id, username, discriminator, avatar, updated_at)
         VALUES ($1, $2, $3, $4, CURRENT_TIMESTAMP)
