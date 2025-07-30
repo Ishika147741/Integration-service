@@ -1,0 +1,9 @@
+﻿{
+  "email": "test@example.com",
+  "password": "sample-password",
+  "sender_name": "Test Sender",
+  "organization": "Integration Service",
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": 587,
+  "smtp_secure": false
+}

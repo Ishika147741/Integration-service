@@ -1,0 +1,6 @@
+{
+  "sender_profile_id": 5,
+  "recipient_profile_id": 3,
+  "subject": "🔍 DELIVERY TEST - Please Reply if Received",
+  "body": "URGENT: Email Delivery Test\n\nHello Ishika,\n\nThis is a delivery test email from CodeShruiken.\n\nIf you receive this email, please reply immediately to confirm delivery.\n\nPossible reasons for email delivery issues:\n1. Emails going to spam/junk folder\n2. Email client not syncing\n3. Gmail filters blocking emails\n4. SMTP rate limiting\n\nPlease check:\n✅ Inbox\n✅ Spam/Junk folder\n✅ All Mail folder\n✅ Promotions tab (Gmail)\n\nSender: educationforyou2025@gmail.com\nRecipient: chauhanishika@gmail.com\nTime: July 30, 2025 - 1:05 PM\n\nBest regards,\nCodeShruiken\nIntegration Service Team"
+}

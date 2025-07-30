@@ -1,0 +1,6 @@
+﻿{
+  "sender_profile_id": 4,
+  "recipient_profile_id": 2,
+  "subject": "✅ REAL Email Test from Integration Service",
+  "body": "<html><body style='font-family: Arial, sans-serif; line-height: 1.6; color: #333;'><div style='max-width: 600px; margin: 0 auto; padding: 20px;'><h2 style='color: #2c3e50;'>🎉 Success! Email Service is Working!</h2><p>Hello Ishika,</p><p>This is a <strong>REAL EMAIL</strong> sent from your Integration Service!</p><div style='background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #28a745;'><p><strong> Email Service Status:</strong></p><ul><li> SMTP Configuration: Working</li><li> Database Logging: Active</li><li> Email Templates: Functional</li><li> API Endpoints: Operational</li></ul></div><p>You can now use this service to send emails programmatically!</p><br><p>Best regards,</p><p><strong>Integration Service Team</strong></p></div></body></html>"
+}

@@ -1,0 +1,6 @@
+﻿{
+  "email": "recipient@example.com",
+  "name": "Test Recipient",
+  "category": "customers",
+  "notes": "Sample recipient for testing"
+}

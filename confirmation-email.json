@@ -1,0 +1,6 @@
+﻿{
+  "sender_profile_id": 4,
+  "recipient_profile_id": 2,
+  "subject": "🎯 Integration Service - Email Test Confirmation",
+  "body": "<html><body style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;'><h2 style='color: #2c3e50;'>Hello Ishika! 👋</h2><div style='background-color: #d4edda; padding: 20px; border-radius: 8px; border-left: 4px solid #28a745; margin: 20px 0;'><h3 style='margin-top: 0; color: #155724;'>✅ Email Service Test Successful!</h3><p>This email confirms that your Integration Service email functionality is working perfectly.</p></div><h3> Service Status:</h3><ul><li> Email sending: <strong>Operational</strong></li><li> Database logging: <strong>Active</strong></li><li> SMTP connection: <strong>Established</strong></li><li> HTML templates: <strong>Rendering correctly</strong></li></ul><div style='background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0;'><p><strong>Technical Details:</strong></p><p> Recipient: chauhanishika97@gmail.com<br> Service: Integration Service<br> Date: July 30, 2025<br> Server: Node.js + PostgreSQL</p></div><p>Best regards,<br><strong>Integration Service Team</strong></p><hr><small>This email was sent automatically. Please confirm receipt if possible.</small></body></html>"
+}

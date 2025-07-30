@@ -1,0 +1,6 @@
+{
+  "sender_profile_id": 5,
+  "recipient_profile_id": 4,
+  "subject": "Test Email to Alternative Address",
+  "body": "This is a test email to verify SMTP functionality is working correctly.\n\nSent from: educationforyou2025@gmail.com\nSent by: CodeShruiken\nTimestamp: July 30, 2025\n\nIf this email arrives, the SMTP service is working properly."
+}

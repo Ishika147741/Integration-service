@@ -8,6 +8,7 @@ const telegramService = require('./src/services/telegramService');
 const DiscordService = require('./src/services/DiscordService');
 const messageRoutes = require('./src/routes/messageRoutes');
 const discordRoutes = require('./src/routes/discordRoutes');
+const emailRoutes = require('./src/routes/emailRoutes');
 const { initializeDatabase } = require('./src/config/database');
 const { errorHandler } = require('./src/middleware/errorHandler');
 
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api', messageRoutes);
 app.use('/api/discord', discordRoutes);
+app.use('/api/email', emailRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

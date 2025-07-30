@@ -1,0 +1,9 @@
+{
+  "email": "ishika@gmail.com",
+  "password": "abcd efgh ijkl mnop",
+  "sender_name": "Ishika Chauhan",
+  "organization": "Integration Service",
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": 587,
+  "smtp_secure": false
+}

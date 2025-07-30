@@ -1,0 +1,9 @@
+{
+  "email": "educationforyou2025@gmail.com",
+  "password": "fkbzrebpoeimbdmr",
+  "sender_name": "CodeShruiken",
+  "organization": "Integration Service",
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": 587,
+  "smtp_secure": false
+}

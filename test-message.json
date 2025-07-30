@@ -1,4 +1,4 @@
-{
-    "receiver": "1587024489",
-    "message": "Hello! Testing message sending functionality via curl. PostgreSQL is storing this message! �✅"
+﻿{
+  "receiver": "1587024489",
+  "message": "This is a test message from the API test suite! 🧪✅"
 }

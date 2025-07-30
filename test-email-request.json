@@ -1,0 +1,6 @@
+{
+  "sender_profile_id": 4,
+  "recipient_profile_id": 3,
+  "subject": "🚀 Integration Service - Another Test Email",
+  "body": "Hello Ishika!\n\nThis is another test email from the Integration Service.\n\nTimestamp: July 30, 2025\n\nFeatures tested:\n- Email delivery system\n- SMTP configuration\n- Database logging\n- Profile management\n\nThis email confirms that the integration service is working perfectly!\n\nBest regards,\nIntegration Service Team"
+}

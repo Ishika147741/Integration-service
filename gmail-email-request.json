@@ -1,0 +1,6 @@
+{
+  "sender_profile_id": 5,
+  "recipient_profile_id": 3,
+  "subject": "✨ Email from CodeShruiken - Integration Service Test",
+  "body": "Hello Ishika!\n\nThis email is sent from CodeShruiken using the Integration Service!\n\n📧 Sender: educationforyou2025@gmail.com\n👤 From: CodeShruiken\n🏢 Organization: Integration Service\n📅 Date: July 30, 2025\n\n🎯 This confirms that:\n✅ Your Gmail SMTP configuration is working\n✅ The sender profile has been created successfully\n✅ Email delivery system is operational\n✅ Database logging is active\n\nYour Integration Service is now ready to send emails from your Gmail account!\n\nBest regards,\nCodeShruiken\nIntegration Service"
+}

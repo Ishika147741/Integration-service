@@ -1,0 +1,6 @@
+﻿{
+  "sender_profile_id": 1,
+  "recipient_profile_id": 2,
+  "subject": "🧪 Test Email from Integration Service",
+  "body": "<html><body><h2>Hello Ishika!</h2><p>This is a test email from your integration service.</p><p>If you receive this, the email service is working perfectly! ✅</p><br><p>Best regards,<br><strong>Integration Service Team</strong></p></body></html>"
+}

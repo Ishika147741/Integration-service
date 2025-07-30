@@ -1,0 +1,9 @@
+{
+  "email": "working.sender@ethereal.email",
+  "password": "demo-password-123",
+  "sender_name": "Integration Service Demo",
+  "organization": "Integration Service",
+  "smtp_host": "smtp.ethereal.email",
+  "smtp_port": 587,
+  "smtp_secure": false
+}

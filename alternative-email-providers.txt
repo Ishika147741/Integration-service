@@ -1,0 +1,23 @@
+# Alternative Email Providers
+
+# Outlook/Hotmail SMTP
+{
+  "email": "your-email@outlook.com",
+  "password": "your-password",
+  "sender_name": "Your Name",
+  "organization": "Integration Service",
+  "smtp_host": "smtp-mail.outlook.com",
+  "smtp_port": 587,
+  "smtp_secure": false
+}
+
+# Yahoo SMTP (requires app password)
+{
+  "email": "your-email@yahoo.com",
+  "password": "your-app-password",
+  "sender_name": "Your Name", 
+  "organization": "Integration Service",
+  "smtp_host": "smtp.mail.yahoo.com",
+  "smtp_port": 587,
+  "smtp_secure": false
+}
